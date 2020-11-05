@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# PyCharm stuff
+.idea/
+
+# Vector file formats
+*.eps
+*.svg
