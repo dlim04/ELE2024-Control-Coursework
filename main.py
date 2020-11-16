@@ -10,5 +10,6 @@ def main(message):
         return False
     return True
 
+
 if __name__ == '__main__':
     main("Hello World")
