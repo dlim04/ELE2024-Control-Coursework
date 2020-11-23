@@ -30,7 +30,7 @@ class PartC:
         f = sympy.Abs(sympy.cos(omega))
         f_laplace = sympy.laplace_transform(f, t, omega)
         # f_laplace.pprint(f_laplace)  # This will not work as omega is not printable.
-        # # Change the sympy symbol in line 27 for pretty print.
+        # # Change the sympy symbol in line 28 for pretty print.
         print(sympy.latex(f_laplace))
 
 
