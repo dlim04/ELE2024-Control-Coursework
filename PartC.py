@@ -25,7 +25,7 @@ class PartC:
         """
         A procedure to calculate the solution to problem c2.
         """
-        omega, t = sympy.symbols('omega t')
+        omega, t = sympy.symbols('omega, t')
 
         f = sympy.Abs(sympy.cos(omega))
         f_laplace = sympy.laplace_transform(f, t, omega)
