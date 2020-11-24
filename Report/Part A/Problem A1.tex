@@ -1,15 +1,49 @@
-\subsection{Problem A1}\label{sec:q1}
-    You may format inline equations using the dollar sign like this $x = 1 = \alpha$ and $y = x^2 - \sqrt{z}$. Equations are like this:
-        
-    \begin{align}\label{eq:lti_state_update}
-        x_{k+1} = A x_k + Bu_k.
+\subsection{Problem A1}\label{sec:q1} Use first principles from physics, as well as Equations \eqref{eq:1} and \eqref{eq:2}, to derive a system of ordinary differential equations that describes how the input voltage, \(V\) , affects the position, \(x\), of the ball on the inclined plane. Note: introduce an inertial frame of reference where counterclockwise rotations are positive.
+    
+    \begin{align}
+        F_{spring} &= k(x - d)\\
+        F_{damper} &= b\dot{x}\\
+        F_{mag} &= c \frac{I^2}{y^2} \text{, where } y = d - x
+    \end{align}
+
+    \begin{align}
+        -Tr &= I\ddot{\theta}\\
+        a &= \ddot{x} = \ddot{\theta r}\\
+        \therefore T &= \frac{I \ddot{\theta}}{r}\\
+        \ddot{\theta} &= \frac{\ddot{x}}{r}\\
+        I &= \frac{2}{5} mr^2
     \end{align}
     
-    Here is an equation with the Laplace transform
+    \begin{align}
+        T &= - \frac{2mr^2 \ddot{x}}{5r^2} \nonumber \\
+        T &= - \frac{2m \ddot{x}}{5}
+    \end{align}
     
-    \begin{equation}
-        \lap \{e^{at}\} = \frac{1}{s-a},
-    \end{equation}
+    \begin{align}
+        F &= m \ddot{x} \nonumber \\
+        F_{mag} + mg \sin{\phi} - T - F_{spring} - F_{damper} &= m \ddot{x} \nonumber \\
+        \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x}
+    \end{align}
     
-    for all complex numbers $s\in\C$ with $\Re(s)>a$. The inverse Laplace transform is denoted like this $\lap^{-1}$.
+    \begin{align}
+        V_{R} &= IR\\
+        V_{L} &= L \dot{I}\\
+        L &= L_{0} + L{1} \exp(- \alpha y) \text{, where } y = d - x
+    \end{align}
+    
+    \begin{align}
+        V &= V_{R} + V_{L} \nonumber \\
+        V &= IR + L \dot{I} \nonumber \\
+        V &= IR + (L_{0} + L_{1} \exp(- \alpha y)) \dot{I} \nonumber \\
+        \nonumber \\
+        V &= IR + (L_{0} + L_{1} \exp(- \alpha (d - x))\dot{I}
+    \end{align}
+    
+    \begin{align}
+        \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x} \nonumber \\
+        \frac{cI^2}{y^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= m \ddot{x} - \frac{2m \ddot{x}}{5} \nonumber \\
+        \frac{cI^2}{y^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x} \nonumber \\
+        \nonumber \\
+        \frac{cI^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x}
+    \end{align}
     
