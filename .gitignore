@@ -134,3 +134,6 @@ dmypy.json
 # Vector file formats
 *.eps
 *.svg
+
+# LaTEX Stuff
+Report/main.tex
