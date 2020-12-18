@@ -1,1 +1,21 @@
-\subsection{Problem A4}
+\subsection*{Problem A4} Linearise the system at an equilibrium point (use deviation variables).
+    \begin{align}
+        {\dot{x_2}} &= {\frac{CI^2}{(d -{x_1^\text{eq}})^2}}+{\frac{5}{3}g\sin{\phi}}-{\frac{5k}{3m}{(x_1 - d)}}-{\frac{5b}{3m}{x_2}}\nonumber
+    \end{align}
+    \begin{align}
+        {\dot{x_2}} &= {\frac{5c}{3m}( \frac{I^2}{(d -{x_1})^2} -  \frac{I^{\text{eq}2}}{(d -{x_1^\text{eq}})^2})}-{\frac{5k}{3m}{(x_1 -
+        {x_1^\text{eq}})}}-{\frac{5b}{3m}{x_2}}\nonumber
+    \end{align}
+    \begin{align}
+        {\dot{x_2}} &= {\frac{5c}{3m}( \frac{2I^2}{(d -{x_1})^2}(I - I^\text{eq}) -  \frac{2I^{\text{eq}2}}{(d -{x_1^\text{eq}})^3}(x_1 - {x_1^\text{eq}}))}-{\frac{5k}{3m}{(x_1 -
+        {x_1^\text{eq}})}}-{\frac{5b}{3m}{x_2}}\nonumber
+    \end{align}
+    \begin{align} 
+        \nonumber 
+        \bar{I} &= I - I^\text{eq} \\ \nonumber 
+        \bar{x_1} &= {x_1} - {x_1^\text{eq}} \\ \nonumber
+        \bar{x} &= {x_2} - {x_2^\text{eq}} \\ \nonumber &= {x_2} \\ \nonumber
+    \end{align}
+    \begin{align}
+        {\dot{x_2}} &= {\frac{5c}{3m}( \frac{2I^\text{eq}}{(d -{x_1})^2}\bar{I} -  \frac{2I^{\text{eq}2}}{(d -{x_1^\text{eq}})^3}\bar{x_1})}-{\frac{5k}{3m}{\bar{x_1}}}-{\frac{5b}{3m}\bar{x_2}}\nonumber
+    \end{align}
