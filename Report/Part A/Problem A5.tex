@@ -1,1 +1,35 @@
-\subsection*{Problem A5}Determine the transfer function of the linearised system that you determined in Problem A4. The input of the system is the voltage across the circuit and the output is the position of the ball on the inclined plane. How many poles does this transfer function have? Derive sufficient conditions on the system parameters under which the impulse response of the transfer function is oscillatory.
+\subsection*{Problem A5} \emph{Determine the transfer function of the linearised system that you determined in Problem A4. The input of the system is the voltage across the circuit and the output is the position of the ball on the inclined plane. How many poles does this transfer function have? Derive sufficient conditions on the system parameters under which the impulse response of the transfer function is oscillatory.}
+    \begin{align}\nonumber
+        \dot{\bar{x_1}} &= \bar{x_2}\\ \nonumber
+        \dot{\bar{x_2}} &= a\bar{I} + b\bar{x_1} - c\bar{x_2}\\ \nonumber
+        \dot{\bar{I}} &= \frac{1}{f}(\bar{V}-\bar{I}R)=\frac{\bar{V}}{f} - \frac{\bar{I}R}{f}\\ \nonumber
+    \end{align}
+    
+    \begin{align}\nonumber
+        s\bar{X_1} &= \bar{X_2} \\ \nonumber
+        s\bar{X_2} &= a\bar{I} + b\bar{X_1} - c\bar{X_2}\\ \nonumber
+        s\bar{I} &=\frac{\bar{V}}{f} - \frac{\bar{I}R}{f}\\ \nonumber
+        s\bar{I} + \frac{\bar{I}R}{f} &=\frac{\bar{V}}{f} \\ \nonumber
+        \left(s+\frac{R}{f}\right)\bar{I} &=\frac{\bar{V}}{f} \\ \nonumber
+        \bar{I} &=\frac{\bar{V}}{f\left( s+\frac{R}{f}\right)}  \\ \nonumber &=\frac{\bar{V}}{fs+R} \\
+    \end{align}
+    \begin{align}\nonumber 
+         s\left(s\bar{X_1}\right) &= a\bar{I} + b\bar{X_1} - c\left(s\bar{X_1}\right)\\ \nonumber
+         s^2\bar{X_1} &= a\bar{I} + b\bar{X_1} - cs\bar{X_1}\\ \nonumber
+         s^2\bar{X_1} - b\bar{X_1} + cs\bar{X_1} &= a\bar{I}\\ \nonumber
+         \therefore \text{As an Equation (23)} => (s^2 - b + cs)\bar{X_1} &= a\left(\frac{\bar{V}}{fs+R}\right)\\ \nonumber
+         &= \bar{V}\left(\frac{a}{fs+R}\right)\\ \nonumber
+    \end{align}
+    \begin{align}\nonumber
+         G(s) = \frac{X(s)}{U(s)} \hspace{3cm}\\ \nonumber
+         X(s) = \text{displacement} \hspace{1cm} U(s) = \text{voltage} \\ \nonumber
+         \frac{\bar{X_1}}{\bar{V}} = \frac{a}{(fs+R)(s^2 - b + cs)} \hspace{3cm}\\ \nonumber
+         fs + R = 0 \hspace{3cm}\\ \nonumber
+         \therefore s = \frac{-R}{f}\\
+    \end{align}
+    \begin{align}\nonumber
+         \hspace{2cm}s^2 + cs -b &= 0 \\ \nonumber
+         s &= \frac{-c \pm \sqrt{c^2 -4(1)(-b)}}{2(1)}\hspace{4cm} \\ \nonumber
+         &= \frac{-c \pm \sqrt{c^2 + 4b}}{2}\hspace{4cm} \\ \nonumber
+         \therefore s = \frac{-c}{2} + \frac{\sqrt{c^2 + 4b}}{2} \\ \&\ s= \frac{-c}{2} - \frac{\sqrt{c^2 + 4b}}{2}\\
+    \end{align}
