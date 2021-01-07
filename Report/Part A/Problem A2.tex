@@ -1,8 +1,50 @@
-\subsection{Problem A2}
-    Refer to other sections as Section~\ref{sec:q1}. An example of a numbered list
-    \begin{enumerate}
-        \item first item,
-        \item second item.
-    \end{enumerate}
-    Links are \href{https://google.com}{like this}. We also have \textbf{boldface}, \textit{italics},
-    \emph{emphasised}, \texttt{truetype}, \textsc{Small Caps} and so on.
+\subsection*{Problem A2}
+    Write the system you determined in Problem A1 in a state space representation. What are the states and inputs of the system?
+
+    \begin{align}
+        V &= IR + (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I}
+    \end{align}
+    \begin{align}
+        I_1 &= I\nonumber\\
+        \therefore \dot{I} &= \dot{I_1}\nonumber\\
+        V &= IR + (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I}\nonumber\\
+        V &= IR + (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I_1}\nonumber\\
+        V - IR &= (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I_1}\nonumber\\
+        V - IR &= (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I_1}\nonumber\\
+        \therefore
+        \dot{I} &= \frac{V - IR}{(L_{0} + L_{1} ^{- \alpha (d - x)})}
+    \end{align}
+
+
+    \begin{align}
+        \frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x} \\
+        x_1 = x, x_2 = \dot{x_1}, \therefore \ddot{x} = \dot{x_2}\nonumber\\
+        \bm{x} =
+        \begin{bmatrix}
+            x_1
+            \\
+            x_2
+        \end{bmatrix}
+        \therefore \bm{\dot{x}} =
+        \begin{bmatrix}
+            \dot{x_1}
+            \\
+            \dot{x_2}
+        \end{bmatrix} \nonumber
+    \end{align}
+    \begin{align}
+        \frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \dot{x_2} \nonumber\\
+        \frac{5(\frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x})}{3m} &= \dot{x_2} \nonumber
+    \end{align}
+    \begin{align}
+        \therefore \bm{\dot{x}} &=
+        \begin{bmatrix}
+            x_2
+            \\
+            \frac{5(\frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x})}{3m}
+        \end{bmatrix}
+    \end{align}
+
+
+
+
