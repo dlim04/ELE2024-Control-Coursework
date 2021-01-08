@@ -1,44 +1,46 @@
 \subsection*{Problem A1}\label{sec:q1} Use first principles from physics, as well as Equations \eqref{eq:1} and \eqref{eq:2}, to derive a system of ordinary differential equations that describes how the input voltage, \(V\) , affects the position, \(x\), of the ball on the inclined plane. Note: introduce an inertial frame of reference where counterclockwise rotations are positive.
     
     \begin{align}
-        F_{spring} &= k(x - d)\\
-        F_{damper} &= b\dot{x}\\
-        F_{mag} &= c \frac{I^2}{y^2} \text{, where } y = d - x
+        F_{spring} &= k(x - d)\label{eq:3}\\
+        F_{damper} &= b\dot{x}\label{eq:4}\\
+        F_{mag} &= c \frac{I^2}{y^2} \text{, where } y = d - x \label{eq:5}
     \end{align}
 
     \begin{align}
         -Tr &= I\ddot{\theta}\\
-        a &= \ddot{x} = \ddot{\theta r}\\
-        \therefore T &= \frac{I \ddot{\theta}}{r}\\
-        \ddot{\theta} &= \frac{\ddot{x}}{r}\\
-        I &= \frac{2}{5} mr^2
+        a &= \ddot{x} = \ddot{\theta r}\nonumber\\
+        \therefore T &= \frac{I \ddot{\theta}}{r}\label{eq:7}\\
+        \ddot{\theta} &= \frac{\ddot{x}}{r}\label{eq:8}\\
+        I &= \frac{2}{5} mr^2\label{eq:9}
     \end{align}
-    
+    Using Equations \eqref{eq:7}, \eqref{eq:8} and  \eqref{eq:9}:
     \begin{align}
         T &= - \frac{2mr^2 \ddot{x}}{5r^2} \nonumber \\
-        T &= - \frac{2m \ddot{x}}{5}
+        T &= - \frac{2m \ddot{x}}{5} \label{eq:10}
     \end{align}
     
     \begin{align}
-        F &= m \ddot{x} \nonumber \\
+        F &= m \ddot{x} \hspace{3cm}\nonumber \\
         F_{mag} + mg \sin{\phi} - T - F_{spring} - F_{damper} &= m \ddot{x} \nonumber \\
-        \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x}
+        \text{Using Equations \eqref{eq:5}, \eqref{eq:10}, \eqref{eq:3} and  \eqref{eq:4}:}\nonumber \\
+        \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x} \label{eq:11} 
     \end{align}
     
     \begin{align}
-        V_{R} &= IR\\
-        V_{L} &= L \dot{I}\\
-        L &= L_{0} + L{1} \exp(- \alpha y) \text{, where } y = d - x
+        V_{R} &= IR\label{eq:12}\\
+        V_{L} &= L \dot{I}\label{eq:13}\\
+        L &= L_{0} + L_{1}^{- \alpha y} \text{, where } y = d - x \label{eq:13}
     \end{align}
     
     \begin{align}
         V &= V_{R} + V_{L} \nonumber \\
-        V &= IR + L \dot{I} \nonumber \\
-        V &= IR + (L_{0} + L_{1} \exp(- \alpha y)) \dot{I} \nonumber \\
+        \text{Using \eqref{eq:12} and  \eqref{eq:13}: } \nonumber \\
+        \therefore V &= IR + L \dot{I} \nonumber \\
+        V &= IR + (L_{0} + L_{1}^{- \alpha y}) \dot{I} \nonumber \\
         \nonumber \\
-        V &= IR + (L_{0} + L_{1} \exp(- \alpha (d - x))\dot{I}
+        V &= IR + (L_{0} + L_{1}^{- \alpha (d - x)}\dot{I}
     \end{align}
-    
+    Now going back to the system described in Equation \eqref{eq:11}:
     \begin{align}
         \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x} \nonumber \\
         \frac{cI^2}{y^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= m \ddot{x} - \frac{2m \ddot{x}}{5} \nonumber \\
