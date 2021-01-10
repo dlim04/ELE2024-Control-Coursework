@@ -1,51 +1,51 @@
-\subsection*{Problem A1}\label{sec:q1} Use first principles from physics, as well as Equations \eqref{eq:1} and \eqref{eq:2}, to derive a system of ordinary differential equations that describes how the input voltage, \(V\) , affects the position, \(x\), of the ball on the inclined plane. Note: introduce an inertial frame of reference where counterclockwise rotations are positive.
-    
-    \begin{align}
-        F_{spring} &= k(x - d)\label{eq:3}\\
-        F_{damper} &= b\dot{x}\label{eq:4}\\
-        F_{mag} &= c \frac{I^2}{y^2} \text{, where } y = d - x \label{eq:5}
-    \end{align}
+\subsection*{Problem A1}
+\hfill \break
+\begin{figure}[h!]
+  \includegraphics[width=0.7\textwidth]{Report/figures/main_diagram}
+  \caption{System of a wooden ball on n inclined plane that can be attracted by an electromagnet, controlled by a voltage V, with forces applied labelled.}
+\end{figure}
 
     \begin{align}
-        -Tr &= I\ddot{\theta}\\
-        a &= \ddot{x} = \ddot{\theta r}\nonumber\\
-        \therefore T &= \frac{I \ddot{\theta}}{r}\label{eq:7}\\
-        \ddot{\theta} &= \frac{\ddot{x}}{r}\label{eq:8}\\
-        I &= \frac{2}{5} mr^2\label{eq:9}
+        F_{spring} &= k(x - d)\label{eq:3}\\
+        F_{damper} &= b\dot{x}\label{eq:4}
     \end{align}
-    Using Equations \eqref{eq:7}, \eqref{eq:8} and  \eqref{eq:9}:
-    \begin{align}
-        T &= - \frac{2mr^2 \ddot{x}}{5r^2} \nonumber \\
-        T &= - \frac{2m \ddot{x}}{5} \label{eq:10}
+    \begin{equation} \label{eq:5}
+        Tr &= -I\ddot{\theta} \therefore T = -\frac{I\ddot{\theta}}{r}
+    \end{equation}
+    \begin{align} 
+        I &= \frac{2}{5} mr^2 \label{eq:6} \\
+        \ddot{\theta} &= \frac{\ddot{x}}{r} \label{eq:7} \\\nonumber
     \end{align}
-    
-    \begin{align}
-        F &= m \ddot{x} \hspace{3cm}\nonumber \\
-        F_{mag} + mg \sin{\phi} - T - F_{spring} - F_{damper} &= m \ddot{x} \nonumber \\
-        \text{Using Equations \eqref{eq:5}, \eqref{eq:10}, \eqref{eq:3} and  \eqref{eq:4}:}\nonumber \\
-        \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x} \label{eq:11} 
+    Sub \eqref{eq:6} and \eqref{eq:7} into \eqref{eq:5}:
+    \begin{equation} \label{eq:8}
+        T = -\frac{2m\ddot{x}}{5}
+    \end{equation}
+    Apply Newtons 2nd Law of Motion to the system: 
+    \begin{equation} \label{eq:9}
+        F_{mag} + mg \sin{\phi} - T - F_{spring} - F_{damper} &= m \ddot{x}
+    \end{equation}
+    Sub \eqref{eq:2}, \eqref{eq:3}, \eqref{eq:4} and \eqref{eq:8} into \eqref{eq:9}:
+    \begin{align} 
+       \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x} \nonumber \\
+       \text{(ODE)}\frac{cI^2}{(\delta - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x}\label{eq:10}
     \end{align}
-    
+    Apply Kirchoff's Voltage Law to system circuit:
     \begin{align}
+        V &= V_{R} + V_{L} \label{eq:11} \\
         V_{R} &= IR\label{eq:12}\\
-        V_{L} &= L \dot{I}\label{eq:13}\\
-        L &= L_{0} + L_{1}^{- \alpha y} \text{, where } y = d - x \label{eq:13}
+        V_{L} &= L \dot{I}\label{eq:13}
     \end{align}
+    Sub \eqref{eq:12}, \eqref{eq:13} into \eqref{eq:11}: 
+    \begin{equation} \label{eq:14}
+        V &= IR + L\dot{I}
+    \end{equation}
+    Sub \eqref{eq:1} into \eqref{eq:14}: 
+    \begin{equation} \label{eq:15}
+        \text{(ODE)}V &= IR + (L_0 + L_1 \exp{(-\alpha y)})\dot{I}
+    \end{equation}
+    \hfill \break
+    Sub \eqref{eq:10} and \eqref{eq:15} are the ordinary differential equations for the system shown in Figure 1.
     
-    \begin{align}
-        V &= V_{R} + V_{L} \nonumber \\
-        \text{Using \eqref{eq:12} and  \eqref{eq:13}: } \nonumber \\
-        \therefore V &= IR + L \dot{I} \nonumber \\
-        V &= IR + (L_{0} + L_{1}^{- \alpha y}) \dot{I} \nonumber \\
-        \nonumber \\
-        V &= IR + (L_{0} + L_{1}^{- \alpha (d - x)}\dot{I}
-    \end{align}
-    Now going back to the system described in Equation \eqref{eq:11}:
-    \begin{align}
-        \frac{cI^2}{y^2} + mg \sin{\phi} + \frac{2m \ddot{x}}{5} - k(x - d) - b \dot{x} &= m \ddot{x} \nonumber \\
-        \frac{cI^2}{y^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= m \ddot{x} - \frac{2m \ddot{x}}{5} \nonumber \\
-        \frac{cI^2}{y^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x} \nonumber \\
-        \nonumber \\
-        \frac{cI^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x}
-    \end{align}
+    
+    
     

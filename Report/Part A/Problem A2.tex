@@ -1,55 +1,37 @@
 \subsection*{Problem A2}
-    Write the system you determined in Problem A1 in a state space representation. What are the states and inputs of the system?
-
-    \begin{align}
-        V &= IR + (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I}
-    \end{align}
-    \begin{align}
-        I_1 &= I\nonumber\\
-        \therefore \dot{I} &= \dot{I_1}\nonumber\\
-        V &= IR + (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I}\nonumber\\
-        V &= IR + (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I_1}\nonumber\\
-        V - IR &= (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I_1}\nonumber\\
-        V - IR &= (L_{0} + L_{1} ^{- \alpha (d - x)})\dot{I_1}\nonumber\\
-        \therefore
-        \dot{I} &= \frac{V - IR}{(L_{0} + L_{1} ^{- \alpha (d - x)})}
-    \end{align}
-
-
-    \begin{align}
-        \frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x} \\
-        x_1 = x, x_2 = \dot{x_1}, \therefore \ddot{x} = \dot{x_2}\nonumber\\
-        \bm{x} =
-        \begin{bmatrix}
-            x_1
-            \\
-            x_2
-            \\
-            I
-        \end{bmatrix}
-        \therefore \bm{\dot{x}} =
-        \begin{bmatrix}
-            \dot{x_1}
-            \\
-            \dot{x_2}
-            \\
-            \dot{I}
-        \end{bmatrix} \nonumber
-    \end{align}
-    \begin{align}
-        \frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \dot{x_2} \nonumber\\
-        \frac{5(\frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x})}{3m} &= \dot{x_2} \nonumber
-    \end{align}
-    \begin{align}
+    \hfill \break
+    For Equation \eqref{eq:10}, let $x_1=x, x_2=\dot{x} \text{ and } \dot{x_2} = \ddot{x} $
+    \begin{equation}
+        \frac{cI^2}{(\delta - x_1)^2} + mg \sin{\phi} - k(x_1 -d) - b{x_2} &= \frac{3m\dot{x_2}}{5} \nonumber \\
+    \end{equation}
+    \begin{equation}
+        \frac{5cI^2}{3m(\delta - x_1)^2} + \frac{5g\sin{\phi}}{3} - \frac{5k}{3m}(x_1 -d) - \frac{5b x_2}{3m} &= \dot{x_2} \nonumber \\
+    \end{equation}
+    State Space Representation:
+    \begin{equation} \label{eq:16}
         \therefore \bm{\dot{x}} &=
         \begin{bmatrix}
             x_2
             \\
-            \frac{5(\frac{c I^2}{(d - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x})}{3m}
-            \\
-            \frac{V - IR}{(L_{0} + L_{1} ^{- \alpha (d - x)})}
+            \frac{5cI^2}{3m(\delta - x_1)^2} + \frac{5g\sin{\phi}}{3} - \frac{5k}{3m}(x_1 -d) - \frac{5b x_2}{3m} &= \dot{x_2} 
         \end{bmatrix}
-    \end{align}
+    \end{equation}
+    \\
+    The State variable of Equation \eqref{eq:16} is $x = (x_1, x_2)$.\\
+    The input signal of Equation \eqref{eq:16} is $I$, the current that runs through the circuit.  
+    \hfill \break
+    \hfill \break
+    For Equation \eqref{eq:15}, let $I_1 = I$ and $\dot{I_1} = \dot{I}$:
+    \begin{equation} \nonumber
+        V &= {I_1}R + \left(L_{0} + L_{1} ^{- \alpha (d - x)}\right)\dot{I_1}
+    \end{equation}
+    State Space Representation:
+    \begin{equation} \label{eq:17}
+    \bm{\dot{I}} &= \frac{V - {I_1}R}{\left(L_{0} + L_{1} ^{- \alpha (d - x)}\right)}
+    \end{equation}
+    The state variable of Equation \eqref{eq:17} is $I$, the current that runs through the circuit.\\
+    The input signal of Equation \eqref{eq:17} is $V$, voltage applied to the circuit. 
+
 
 
 
