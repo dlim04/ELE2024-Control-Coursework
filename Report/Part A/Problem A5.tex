@@ -1,1 +1,45 @@
 \subsection*{Problem A5} 
+    \hfill \break \\
+Apply Laplace Transform to Equations \eqref{eq:30},\eqref{eq:31} and \eqref{eq:32}:
+\begin{align}
+    s\bar{X_1} &= \bar{X_2} \label{eq:33}\\
+    s\bar{X_2} &= a\bar{I} + b\bar{X_1} - c\bar{X_2}\label{eq:34} \\
+    s\bar{I} &= \frac{\bar{V}}{f} - \frac{\bar{I}R}{f}\label{eq:35}
+\end{align}
+Sub Equation \eqref{eq:33} into \eqref{eq:34}:\\
+\begin{align}
+     s(s\bar{X_1}) &= a\bar{I} + b\bar{X_1} - c(s\bar{X_1})\nonumber \\
+     s^2\bar{X_1} &= a\bar{I} + b\bar{X_1} - cs\bar{X_1}\nonumber \\
+     s^2\bar{X_1} - b\bar{X_1} + cs\bar{X_1} &= a\bar{I} \label{eq:36}
+\end{align}
+Rearrange Equation \eqref{eq:35}:\\
+\begin{align}
+     s\bar{I} = \frac{\bar{V}}{f} - \frac{\bar{I}R}{f}\nonumber \\
+     sf\bar{I}+ \bar{I}R = \bar{V} \nonumber \\
+     \bar{I}(sf+ R) = \bar{V} \nonumber \\
+     \bar{I} = \frac{\bar{V}}{(sf+ R)} \label{eq:37}
+\end{align}
+Sub Equation \eqref{eq:37} into \eqref{eq:36}:\\
+\begin{align}
+    s^2\bar{X_1} - b\bar{X_1} + cs\bar{X_1} = a\frac{\bar{V}}{(sf+ R)} \nonumber \\
+     (s^2 - b + cs)\bar{X_1} = \bar{V}\frac{a}{(sf+ R)} \label{eq:38}
+\end{align}
+The Transfer Function for Equation \eqref{eq:38} where $\bar{V}$ is the input,voltage across the circuit and $\bar{X_1}$ is the output of the system, the position of the ball on the inclined plane. 
+\begin{equation}\label{eq:39}
+G(s) = \frac{\bar{X_1}(s)}{\bar{V}(s)} = \frac{a}{(sf+R)(s^2 - b + cs)}
+\end{equation}
+Poles of Equation \eqref{eq:39}:
+\begin{equation} \nonumber
+    \frac{a}{(sf+R)(s^2 - b + cs)} = 0
+\end{equation}
+\begin{align}
+    sf+R = 0 \nonumber \\
+    \therfore s = -\frac{R}{f} \label{eq:40}
+\end{align}
+\begin{align}
+    s^2 - b + cs = 0 \nonumber \\
+    s = \frac{-c \pm \sqrt{c^2 - 4(1)(-b)}}{2} \nonumber \\
+    = \frac{-c \pm \sqrt{c^2 + 4b}}{2} \nonumber \\
+    \therfore s = \frac{-c + \sqrt{c^2 + 4b}}{2} ,\frac{-c - \sqrt{c^2 + 4b}}{2} \label{eq:41}   
+\end{align}
+As shown in Equations \eqref{eq:40} \&\ \eqref{eq:41}, Equation \eqref{eq:39} has 3 poles.
