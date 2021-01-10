@@ -23,11 +23,11 @@
     \hfill \break
     For Equation \eqref{eq:15}, let $I_1 = I$ and $\dot{I_1} = \dot{I}$:
     \begin{equation} \nonumber
-        V &= {I_1}R + \left(L_{0} + L_{1} ^{- \alpha (d - x)}\right)\dot{I_1}
+        V &= {I_1}R + \left(L_{0} + L_{1}\exp{- \alpha y}\right)\dot{I_1}
     \end{equation}
     State Space Representation:
     \begin{equation} \label{eq:17}
-    \bm{\dot{I}} &= \frac{V - {I_1}R}{\left(L_{0} + L_{1} ^{- \alpha (d - x)}\right)}
+    \bm{\dot{I}} &= \frac{V - {I_1}R}{\left(L_{0} + L_{1}\exp{- \alpha y}\right)}
     \end{equation}
     The state variable of Equation \eqref{eq:17} is $I$, the current that runs through the circuit.\\
     The input signal of Equation \eqref{eq:17} is $V$, voltage applied to the circuit. 

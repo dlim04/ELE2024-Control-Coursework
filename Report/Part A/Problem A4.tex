@@ -1,95 +1,77 @@
-\subsection*{Problem A4} \emph{ Linearise the system at an equilibrium point (use deviation variables).}
+\subsection*{Problem A4} 
+    \hfill \break
+    Subtract by parts Equations \eqref{eq:16} and \eqref{eq:18}:
     \begin{align}
-        {\dot{x_2}} &= {\frac{CI^2}{(d -{x_1^\text{eq}})^2}}+{\frac{5}{3}g\sin{\phi}}-{\frac{5k}{3m}{(x_1 - d)}}-{\frac{5b}{3m}{x_2}}\nonumber
+        \dot{x_1} = x_2 \nonumber\\ 
+        \text{--- } \hspace{0.5cm} 0 = x^e \nonumber \\
+        \hspace{3cm}\rule{3cm}{1pt} \nonumber \\
+        \therefore \dot{\bar{x}} = x_2 - x_2^e \nonumber \\
+        = \bar{x_2} \nonumber
+    \end{align}
+    \hfill \break
+    \begin{align}
+        \dot{x_2} = \frac{5cI^2}{3m(\delta - x_1)^2} + \frac{5g\sin{\phi}}{3} - \frac{5k}{3m}(x_1 -d) - \frac{5b x_2}{3m}\nonumber\\ 
+        \text{--- }  \hspace{2cm}0 = \frac{5cI^e^2}{3m(\delta - x_1^e)^2} + \frac{5g\sin{\phi}}{3} - \frac{5k}{3m}(x_1^e -d)  \nonumber \\
+        \rule{10cm}{1pt} \nonumber \\
+        \dot{\bar{x_2}} ={\frac{5c}{3m}\left( \frac{I^2}{(\delta -{x_1})^2} -  \frac{I^e^2}{(\delta -{x_1^{e}})^2}\right)}-{\frac{5k}{3m}{(x_1 - x_1^e)}}-{\frac{5b}{3m}x_2} \label{eq:20}
+    \end{align}
+    \hfill \break
+    Apply Taylor's Theorem to Equation \eqref{eq:20}:
+    \begin{align}
+        g(I, x_1) \approx g(I^e, x_1^e) + \frac{\partial g}{\partial I_{I^e, x_1^e}}\cdot (I - I^e) + \frac{\partial g}{\partial x_{I^e, x_1^e}}\cdot (x_1 - x_1^e) \label{eq:21}
     \end{align}
     \begin{align}
-        {\dot{x_2}} &= {\frac{5c}{3m}( \frac{I^2}{(d -{x_1})^2} -  \frac{I^{\text{eq}2}}{(d -{x_1^\text{eq}})^2})}-{\frac{5k}{3m}{(x_1 -
-        {x_1^\text{eq}})}}-{\frac{5b}{3m}{x_2}}\nonumber
+        g(I, x_1) = \frac{I^2}{(\delta - x_1)^2} \label{eq:22}\\
+        \frac{\partial g}{\partial I} = \frac{2I}{(\delta -{x_1})^2}\label{eq:23} \\
+        \frac{\partial g}{\partial x_1} = \frac{2I^2}{(\delta -{x_1})^3} \label{eq:24}
     \end{align}
+    Sub Equations \eqref{eq:22},\eqref{eq:23} and \eqref{eq:24} into \eqref{eq:21}:
     \begin{align}
-        {\dot{x_2}} &= {\frac{5c}{3m}( \frac{2I^2}{(d -{x_1})^2}(I - I^\text{eq}) -  \frac{2I^{\text{eq}2}}{(d -{x_1^\text{eq}})^3}(x_1 - {x_1^\text{eq}}))}-{\frac{5k}{3m}{(x_1 -
-        {x_1^\text{eq}})}}-{\frac{5b}{3m}{x_2}}\nonumber
+         \frac{I^2}{(\delta - x_1)^2} = \frac{I^e^2}{(\delta - x_1^e)^2} + \frac{2I^e}{(\delta -{x_1^e})^2}\cdot (I - I^e) + \frac{2I^e^2}{(\delta -{x_1^e})^3}\cdot (x_1 - x_1^e) \nonumber \\
+         \frac{I^2}{(\delta - x_1)^2} - \frac{I^e^2}{(\delta - x_1^e)^2} = \frac{2I^e}{(\delta -{x_1^e})^2}\cdot (I - I^e) + \frac{2I^e^2}{(\delta -{x_1^e})^3}\cdot (x_1 - x_1^e)  \label{eq:25}
     \end{align}
-    \begin{align} 
-        \nonumber 
-        \bar{I} &= I - I^\text{eq} \\ \nonumber 
-        \bar{x_1} &= {x_1} - {x_1^\text{eq}} \\ \nonumber
-        \bar{x} &= {x_2} - {x_2^\text{eq}} \\ \nonumber &= {x_2} \\ \nonumber
-    \end{align}
+    Sub Equation \eqref{eq:25} into Equation \eqref{eq:20}:
+    \begin{equation}
+         \dot{\bar{x_2}} = \frac{5c}{3m}\left( \frac{2I^e}{(\delta -{x_1^e})^2}\cdot (I - I^e) + \frac{2I^e^2}{(\delta -{x_1^e})^3}\cdot (x_1 - x_1^e)\right) - \frac{5k}{3m}(x_1 - x_1^e) - - \frac{5b}{3m}(x_2) \label{eq:26}
+    \end{equation}
+    Introduce deviation variables:
     \begin{align}
-        {\dot{x_2}} &= {\frac{5c}{3m}( \frac{2I^\text{eq}}{(d -{x_1})^2}\bar{I} -  \frac{2I^{\text{eq}2}}{(d -{x_1^\text{eq}})^3}\bar{x_1})}-{\frac{5k}{3m}{\bar{x_1}}}-{\frac{5b}{3m}\bar{x_2}}\nonumber
+         \bar{I} &= I - I^e \nonumber\\
+         \bar{x_1} &= x_1 - x_1^e \nonumber\\
+         \bar{x_2} &= x_2 - x_2^e = x_2 - 0 = x_2 \nonumber
     \end{align}
-    \begin{align}\nonumber
-        {g(I) = I^2}   \hspace{1cm} {g(I^\text{eq}) = I^\text{eq}^2 } \\ \nonumber
-        {g'(I) = 2I}   \hspace{1cm} {g'(I^\text{eq}) = 2I^\text{eq} } \\ \nonumber
+    to Equation \eqref{eq:26}:
+    \begin{align}
+         \dot{\bar{x_2}} = \frac{5c}{3m}\left( \frac{2I^e}{(\delta -{x_1^e})^2}\cdot \bar{I} + \frac{2I^e^2}{(\delta -{x_1^e})^3}\cdot \bar{x_1}\right) - \frac{5k}{3m}(\bar{x_1}) - \frac{5b}{3m}(\bar{x_2}) \nonumber \\
+         \dot{\bar{x_2}} =\frac{5c2I^e}{(3m\delta -{x_1^e})^2}\cdot \bar{I} + \frac{10cI^e^2}{3m(\delta -{x_1^e})^3}\cdot \bar{x_1} - \frac{5k}{3m}(\bar{x_1}) - \frac{5b}{3m}(\bar{x_2}) \nonumber \\
+         \dot{\bar{x_2}} =\frac{5c2I^e}{(3m\delta -{x_1^e})^2}\cdot \bar{I} + \left(\frac{10cI^e^2}{3m(\delta -{x_1^e})^3} - \frac{5k}{3m}\right)(\bar{x_1}) - \frac{5b}{3m}(\bar{x_2}) \label{eq:27} 
     \end{align}
-    \begin{align}\nonumber
-        {h(x_1) = (d -{x_1})^2}   \hspace{1cm} {h(x_1^\text{eq}) = (d -{x_1^\text{eq}})^2} \\ \nonumber
-        {h'(x_1) = 2(d -{x_1})}   \hspace{1cm} {h'(x_1^\text{eq}) = 2(d -{x_1^\text{eq}})} \\ \nonumber
+    For Equation \eqref{eq:27}, let :
+    \begin{equation}
+         a =\frac{5c2I^e}{(3m\delta -{x_1^e})^2}, b = \left(\frac{10cI^e^2}{3m(\delta -{x_1^e})^3} - \frac{5k}{3m}\right) c = \frac{5b}{3m} \nonumber
+    \end{equation}
+    Subtract by parts \eqref{eq:17} and \eqref{eq:19} :
+    \begin{align}
+        {\dot{I}} = \frac{V - {I_1}R}{\left(L_{0} + L_{1}\exp{- \alpha y}\right)}\nonumber\\ 
+        \text{--- }  0 = \frac{V^e - {I_1^e}R}{\left(L_{0} + L_{1}\exp{- \alpha (d - x)}\right)} \nonumber \\
+        \rule{6cm}{1pt} \nonumber \\
+        {\dot{\bar{I}}} = \frac{V - V^e - {I_1}R- {I_1^e}R}{\left(L_{0} + L_{1}\exp{- \alpha y}\right)}\label{eq:28}
     \end{align}
-    \begin{align}\nonumber
-        {g(I) \approx g(I^\text{eq})+g'(I^\text{eq}) \cdot (I - I^\text{eq})} \\ \nonumber
-        {I^2 = I^\text{eq}^2 +2I^\text{eq}(I - I^\text{eq})} \\ \nonumber
-        \therefore {I^2 - I^\text{eq}^2 =2I^\text{eq}(I - I^\text{eq})} \\ \nonumber
+    Introduce deviation variables,
+    \begin{align}
+        \bar{V} = V - V^e \nonumber \\
+        \bar{I} = I_1 - I_1^e \nonumber
     \end{align}
-    \begin{align}\nonumber
-        {h(x_1) \approx h(x_1^\text{eq})+h'(x_1^\text{eq}) \cdot (x_1 - x_1^\text{eq})} \\ \nonumber
-        {(d -{x_1^\text{eq}})^2 =(d -{x_1^\text{eq}})^2 +2(d -{x_1^\text{eq}})^2(x_1 - x_1^\text{eq})} \\ \nonumber
-        \therefore {(d -{x_1^\text{eq}})^2 -(d -{x_1^\text{eq}})^2 = 2(d -{x_1^\text{eq}})^2(x_1 - x_1^\text{eq})} \\ \nonumber
-    \end{align}
-    \begin{align}\nonumber
-        g(I, x_1) \approx g(I^\text{eq}, x_1^\text{eq}) + \frac{\delta g}{\delta I_{I^\text{eq}, x_1^\text{eq}}}\cdot (I - I^\text{eq}) + \frac{\delta g}{\delta x_{I^\text{eq}, x_1^\text{eq}}}\cdot (x_1 - x_1^\text{eq}) \\ \nonumber
-        g(I, x_1) = \frac{I^2}{(d -{x_1})^2} \hspace{1cm} \frac{\delta g}{\delta I} = \frac{2I}{(d -{x_1})^2}\hspace{1cm} \frac{\delta g}{\delta x} = I^2 \cdot {(d -{x_1})^{-2}} = \frac{2I^2}{(d -{x_1})^3}\\ \nonumber
-        g(I, x_1) = g(I^{\text{eq}}, x_1^{\text{eq}}) +  \frac{2I^{\text{eq}}}{(d -{x_1^{\text{eq}}})^2} \cdot (I - I^{\text{eq}}) + \frac{2I^{\text{eq}}^2}{(d -{x_1^\text{eq}})^3} \cdot {(x_1 - x_1^\text{eq})}\\ \nonumber
-        = \frac{I^\text{eq}^2}{(d -{x_1^\text{eq}})^2} + \frac{2I^\text{eq}^2}{(d -{x_1^\text{eq}})^2} \cdot (I - I^\text{eq}) + \frac{2I^\text{eq}^2}{(d -{x_1^\text{eq}})^3} \cdot (x_1 - x_1^\text{eq}) \\ \nonumber
-    \end{align}
-    \begin{align}\nonumber
-        \dot{x_2} = \frac{5c}{3m}(\frac{2I^\text{eq}^2}{(d -{x_1^\text{eq}})^2} \bar{I} + \frac{2I^\text{eq}^2}{(d -{x_1^\text{eq}})^3}\bar{x_1}) - \frac{5k}{3m}\bar{x_1} - \frac{5b}{3m}\bar{x_2} \\ \nonumber
-        = \frac{{5c}2I^\text{eq}^2}{3m(d -{x_1^\text{eq}})^2} \bar{I} +( \frac{5c2I^\text{eq}^2}{3m(d -{x_1^\text{eq}})^3} - \frac{5k}{3m})\bar{x_1} - \frac{5b}{3m}\bar{x_2} \\ \nonumber
-    \end{align}
-    \begin{align}\nonumber
-        \dot{x_1} = x_2 \hspace{1cm} 0 = x_2^\text{eq} \\ \nonumber
-        \therefore \dot{x_1} = x_2 - x_2^\text{eq} = \bar{x_2}
-    \end{align}
-    \begin{align}\nonumber
-        a = \frac{{5c}2I^\text{eq}^2}{3m(d -{x_1^\text{eq}})^2} \hspace{1cm}
-        b =( \frac{5c2I^\text{eq}^2}{3m(d -{x_1^\text{eq}})^3} - \frac{5k}{3m})\hspace{1cm}
-        c = \frac{5b}{3m} \\ \nonumber
-        \dot{\overline{x_1}} = \overline{x_2} \hspace{3cm} \dot{\overline{x_2}} = a\bar{I} + b\bar{x_1} - c\bar{x_2} \\ \nonumber
-    \end{align}
-    \begin{align}\nonumber
-        \dot{\bar{I}} = \frac{\bar{V} - \bar{I}R}{L_0 - L_1 e^{-\alpha(d - x)}} \\ \nonumber
-        f = {L_0 - L_1 e^{-\alpha(d - x)}} \\ \nonumber
-        \therefore{\dot{\bar{I}} = \frac{1}{f}(\bar{V} - \bar{I}R})
-    \end{align}
-    \begin{align}\nonumber
-        \text{A pair of equilibrium points } ({x^\text{eq}}, {F^\text{eq}}) \text{ can be defined for the system } f(x, F) \text{ if } f({x^\text{eq}}, {F^\text{eq}}) = 0 \\ \nonumber
-    \end{align}
-    \begin{align}\nonumber
-        \text{ Equilibrium points} &=
-        \begin{bmatrix}
-            {x_2^\text{eq}} &= 0
-            \\
-            \frac{5(\frac{c I^2}{(d - {x_1})^2} + mg \sin{\phi} - k({x_1^\text{eq}} -d))}{3m} &= 0
-        \end{bmatrix}
-    \end{align}
-    \begin{align}\nonumber
-        \dot{\bar{I}} = \frac{V - I_1R}{L_0 - L_1 e^{-\alpha(d - x)}} => \dot{I} = f(I,V) \\ \nonumber
-        f(I^{\text{eq}},V^{\text{eq}}) = 0 \hspace{2cm}\\ \nonumber
-        \frac{V^\text{eq} - I^\text{eq}R}{L_0 - L_1 e^{-\alpha(d - x)}} = 0 \hspace{2cm}\\ \nonumber
-    \end{align}
-    \begin{align}\nonumber
-    \text{ Equilibrium points} &=
-        \begin{bmatrix}
-            {V - I_1R} &= 0
-        \end{bmatrix} \hspace{2.8cm}
-    \end{align}
-    \begin{align}\nonumber
-        \bar{V} = V - V^\text{eq} \hspace{2cm} \bar{I} = I - I^\text{eq}\\ \nonumber
-    \end{align}
-     \begin{align}\nonumber
-        \dot{I} = \frac{(V - V^\text{eq}) - R(I - I^\text{eq})}{L_0 - L_1 e^{-\alpha(d - x)}} \\ \nonumber
-    \end{align}
-    \begin{align}\nonumber
-        \dot{I} = \frac{\bar{V} - \bar{I}R}{L_0 - L_1 e^{-\alpha(d - x)}}\hspace{1cm} \\ \nonumber 
+    to Equation \eqref{eq:28}:
+    \begin{equation}\label{eq:29}
+        \dot{\bar{I}} = \frac{\bar{V} - \bar{I_1}R}{\left(L_{0} + L_{1}\exp{- \alpha y}\right)}
+    \end{equation}
+    \hfill \break \\
+    Let $f = {L_{0} + L_{1}\exp{(- \alpha y)}}$ for Equation \eqref{eq:29}\\
+    \hfill \break \\
+    The Linearised system equations are: \\
+    \begin{align}
+        \dot{\bar{x}} &= \bar{x_2} \\
+        \dot{\bar{x_2}} &= a\bar{I} + b\bar{x_1} -c\bar{x_2} \\
+        \dot{\bar{I}} &= \frac{1}{f}(\bar{V} - \bar{I}R)
     \end{align}
