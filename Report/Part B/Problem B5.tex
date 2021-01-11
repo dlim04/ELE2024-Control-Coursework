@@ -1,1 +1,7 @@
 \subsection*{Problem B5}
+\hfill \break 
+The desired characteristics of a controller: \\
+BIBO stability is a critical benchmark for our system to reach. To be exact, bounded changes in the set point should only cause bounded changes in the output \\
+We should want the system to converge on a point quickly but with as little oscillation as possible. To do this the system would need to penalise large lateral velocities in the system. It would be preferable for the ball to move slower and reach the point with low oscillation than for it to come in contact with the physical boundaries of the system.\\
+Evidence it is a good controller:\\
+As George Box once said: "All models are wrong". What we aim for in a model may not be seen in practise. The evidence we would have to show it is a good controller would be a very similar measurement from our laser proximity sensor as what our model would estimate. The \emph{offset} should be as low as possible. The model also has to take into account the physical boundaries of the system that we explore in Problem B1. 
