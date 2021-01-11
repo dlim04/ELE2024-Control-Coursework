@@ -1,1 +1,25 @@
 \subsection*{Problem B1}
+\hfill \break
+The wooden ball is limited to where it can equilibrate  by the physical limits of the system.\\
+$x_{max}$ is the point furthest down the slope where the ball can equilibrate. This cannot be any further down the slope than the location of the electromagnet. This location is denoted on Figure \ref{fig:system} with $\delta$.\\
+$\therefore$ We can say that $x_{max}$ can be no greater than $\delta$.\\
+The limit of where the ball could equilibriate on the upper end of the slope is denoted by $x_{min}$. $d$ is the natural length of the spring, so $x_{min}$ can be no less than that, but we also need to take into account the downward force of the ball. This downward force is denoted in Figure \ref{fig:system} with $mg\sin{\phi}$. \\
+However, the ball is not free to roll unobstructed. Taking into account the stiffness of the spring $k$, we can see that $x_{min}$ can be no smaller than $d + \frac{mg\sin{\phi}}{k}$.\\
+$\therefore$ We can say that the system can only equilibrate at those positions $x^e$ that satisfy: \\
+\begin{equation}
+    d + \frac{mg\sin{\phi}}{k} < x^e < \delta
+\end{equation}
+To calculate the equilibrium voltage and current we use Equation \eqref{eq:10}. 
+\begin{equation} \nonumber
+    \frac{cI^2}{(\delta - x)^2} + mg \sin{\phi} - k(x -d) - b \dot{x} &= \frac{3m}{5} \ddot{x}
+\end{equation}
+To equilibriate, velocity and acceleration are equal to zero: \\
+\begin{align} 
+    \therefore \frac{cI^2}{(\delta - x)^2} + mg \sin{\phi} - k(x -d)  = 0 \nonumber \\
+    \frac{-cI^2}{(\delta - x)^2} = mg \sin{\phi} - k(x -d) \nonumber \\
+    \therefore I^e = \sqrt{\frac{(mg\sin{\phi}) - k(x_1^e - d)}{-c}(\delta - x_1^e)^2}
+\end{align}
+\begin{align} 
+    V^e &= I^e \cdot R \nonumber \\
+    \therefore V^e &= \left(\sqrt{\frac{(mg\sin{\phi}) - k(x_1^e - d)}{-c}(\delta - x_1^e)^2} \right) R
+\end{align}
