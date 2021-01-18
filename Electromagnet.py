@@ -1,10 +1,7 @@
-from math import exp
-
-
 class Electromagnet:
     """
-    Class to define the electromagnet object which stores the instance variables and calculates the magnetism of the
-    inductor in the model.
+    Class to define the electromagnet object which is used as a struct to store the instance variables for the
+    electromagnet
     """
     def __init__(self, nominal_inductance=120, inductance1=25, inductance_constant=1.2, resistance=53,
                  magnetic_constant=6815):
@@ -21,11 +18,3 @@ class Electromagnet:
         self.inductance_constant = inductance_constant
         self.resistance = resistance
         self.magnetic_constant = magnetic_constant
-
-    def __get_inductance(self, y):
-        """
-        A method to calculate the resultant inductance of the inductor.
-        :param y: The change in the length of the spring in m as a float
-        :return: The inductance of the inductor
-        """
-        return self.nominal_inductance + self.inductance1 * exp(-self.inductance_constant * y)

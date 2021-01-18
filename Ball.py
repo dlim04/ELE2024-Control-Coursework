@@ -10,17 +10,3 @@ class Ball:
         """
         self.mass = mass
         self.radius = radius
-
-    def get_mass(self):
-        """
-        Getter for the mass of the ball.
-        :return: (m) The mass of the ball in grams as an integer
-        """
-        return self.mass
-
-    def get_radius(self):
-        """
-        Getter for the radius of tha ball.
-        :return: (r) The radius of the ball in centimeters as a float
-        """
-        return self.radius
