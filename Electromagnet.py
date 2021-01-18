@@ -1,7 +1,7 @@
 class Electromagnet:
     """
     Class to define the electromagnet object which is used as a struct to store the instance variables for the
-    electromagnet
+    electromagnet.
     """
     def __init__(self, nominal_inductance=120, inductance1=25, inductance_constant=1.2, resistance=53,
                  magnetic_constant=6815):
