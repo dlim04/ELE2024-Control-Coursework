@@ -259,6 +259,6 @@ class PartB:
 
 if __name__ == '__main__':
     PartB.problem_b2()
-    # PartB.problem_b3()
-    # PartB.problem_b4()
-    # PartB.problem_b6()
+    PartB.problem_b3()
+    PartB.problem_b4()
+    PartB.problem_b6()
