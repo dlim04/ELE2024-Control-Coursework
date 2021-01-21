@@ -52,7 +52,7 @@ class System(ABC):
 
         number_of_points = 100
         solution = solve_ivp(self._system_dynamics, [0, dt], z_initial, args=[voltage],
-                             t_eval=linspace(0, dt, number_of_points))
+                             t_eval=linspace(0, dt, number_of_points), method='Radau')
 
         self.x1 = solution.y[0][-1]
         self.x2 = solution.y[1][-1]
