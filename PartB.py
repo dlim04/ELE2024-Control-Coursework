@@ -44,15 +44,15 @@ class PartB:
     def problem_b2():
 
         # Non Linear System
-        non_linear_system = NonLinearSystem(0.46)
+        non_linear_system = NonLinearSystem(0.6)
 
-        non_linear_solution = non_linear_system.move(36.04, 100)
+        non_linear_solution = non_linear_system.move(0.46946962315294616, 100)
         PartB.system_plotter(non_linear_solution)
 
         # Linear System
-        linear_system = LinearSystem(0.46)
+        linear_system = LinearSystem(0.6)
 
-        linear_solution = linear_system.move(36.04, 100)
+        linear_solution = linear_system.move(0.46946962315294616, 100)
         PartB.system_plotter(linear_solution)
 
     @staticmethod
