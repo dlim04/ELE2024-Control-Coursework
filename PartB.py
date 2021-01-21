@@ -66,7 +66,7 @@ class PartB:
         L0_val = 0.12  # inductance
         L1_val = 0.025  # positive constant
         alpha_val = 1.2  # positive constant
-        c_val = 6815
+        c_val = 6.815
         k_val = 1880  # spring
         b_damper_val = 10.4  # damper
         phi_val = np.deg2rad(42)  # 90 - angle of slope
@@ -132,7 +132,7 @@ class PartB:
         L0_val = 0.12  # inductance
         L1_val = 0.025  # positive constant
         alpha_val = 1.2  # positive constant
-        c_val = 6815
+        c_val = 6.815
         k_val = 1880  # spring
         b_damper_val = 10.4  # damper
         phi_val = np.deg2rad(42)  # 90 - angle of slope
@@ -194,7 +194,7 @@ class PartB:
         L0_val = 0.12  # inductance
         L1_val = 0.025  # positive constant
         alpha_val = 1.2  # positive constant
-        c_val = 6815
+        c_val = 6.815
         k_val = 1880  # spring
         b_damper_val = 10.4  # damper
         phi_val = np.deg2rad(42)  # 90 - angle of slope
