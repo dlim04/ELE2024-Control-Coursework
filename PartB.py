@@ -21,22 +21,24 @@ class PartB:
         Helper procedure to display the results from a simulation of a ball moving.
         :param solution: The solution for the movement of the ball as a solve_ivp object
         """
-        fig, (ax1, ax2, ax3) = pyplot.subplots(1, 3)
+        fig, (sub1, sub2, sub3) = pyplot.subplots(1, 3)
 
-        ax1.plot(solution.t, solution.y[0])
-        ax1.grid()
-        ax1.set_xlabel('Time (s)')
-        ax1.set_ylabel('$x_1$ (m)')
+        sub1.plot(solution.t, solution.y[0])
+        sub1.grid()
+        sub1.set_xlabel('Time (s)')
+        sub1.set_ylabel('$x_1$ (m)')
 
-        ax2.plot(solution.t, solution.y[1])
-        ax2.grid()
-        ax2.set_xlabel('Time (s)')
-        ax2.set_ylabel('$x_2$ (m/s)')
+        sub2.plot(solution.t, solution.y[1])
+        sub2.grid()
+        sub2.set_xlabel('Time (s)')
+        sub2.set_ylabel('$x_2$ (m/s)')
 
-        ax3.plot(solution.t, solution.y[2])
-        ax3.grid()
-        ax3.set_xlabel('Time (s)')
-        ax3.set_ylabel('I (A)')
+        sub3.plot(solution.t, solution.y[2])
+        sub3.grid()
+        sub3.set_xlabel('Time (s)')
+        sub3.set_ylabel('I (A)')
+
+        pyplot.subplots_adjust(right=1.5)
 
         pyplot.show()
 
