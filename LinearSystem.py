@@ -30,4 +30,4 @@ class LinearSystem(System):
                 (a_equation*(I - I_equilibrium)) + (b_equation*(x1-x_equilibrium)) - (c_equation*x2),
                 ((voltage - voltage_equilibrium) - (I - I_equilibrium) * self.electromagnet.resistance) / (
                             self.electromagnet.nominal_inductance + (self.electromagnet.inductance1 * exp(
-                        -self.electromagnet.inductance_constant * (self.d - x1))))]
+                        -self.electromagnet.inductance_constant * (self.d - x_equilibrium))))]
