@@ -10,10 +10,13 @@ from Spring import Spring
 
 
 class System(ABC):
+    """
+    Abstract class for the LinearSystem and NonLinearSystem classes to inherit from.
+    """
     def __init__(self, x, d=0.42, delta=0.65, plane_angle=radians(42), gravitational_acceleration=9.81, ball=Ball(),
                  electromagnet=Electromagnet(), spring=Spring()):
         """
-        Constructor for class NonLinearSystem.
+        Constructor for class System.
         :param x: (x) The distance of the centre of the ball from the wall in meters as a float
         :param d: (d) The natural length of the spring where no restoring force is applied in meters as a float
         :param delta: (delta) The distance of the centre of the electromagnet from the wall in meters as a float
